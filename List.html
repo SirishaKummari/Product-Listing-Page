@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+ <nav>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="About.html">About us</a></li> 
+ </nav>
+ <div class="list-1">
+ <h2>Product List</h2>
+ <input type="text" id="search" placeholder="Search..." onkeyup="filterProducts()">
+ </div> 
+</div>
+    <div class="small-container">
+        <h2 class="title">Featured products</h2>
+        <div class="row">
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress1</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress1')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress2</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress2')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress3</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress3')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress4</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress4')">Add to Cart</button>
+            </div>
+        </div>
+        <h2 class="title">Latest products</h2>
+        <div class="row">
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress5</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress5')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress6</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress6')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress7</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress7')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress8</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress8')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress9</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress9')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress10</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress10')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress11</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress11')">Add to Cart</button>
+            </div>
+            <div class="list">
+                <img src="yellow.jpg">
+                <h4 class="productname">SilkDress12</h4>
+                <p>$50.00</p>
+                <button onclick="addToCart('SilkDress12')">Add to Cart</button>
+            </div>
+        </div>
+    
+    
+    <div class="footer">
+        <div class="container">
+            <div class="row">         
+                <div class="footer-1">
+                
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>You Tube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+            <b>Copyright - List</b>
+            </div>
+        </div>
+    </div>
+    <script>
+        function filterProducts() {
+          const search = document.getElementById('search');
+          const filter = search.value.toLowerCase();
+          const products = document.querySelectorAll('.list');
+    
+          products.forEach(list => {
+            const productNameElement = list.querySelector('.productname')
+            if (productNameElement) {
+                const productName = productNameElement.textContent.toLowerCase();
+                if (productName && productName.toLowerCase().includes(filter)) {
+              list.style.display = '';
+            } else {
+              list.style.display = 'none';
+            }
+        }
+          });
+        }
+    
+        function addToCart(productName) {
+          alert(`${productName} has been added to your cart!`);
+        }
+      </script>
+    
+
+</body>
+</html>
